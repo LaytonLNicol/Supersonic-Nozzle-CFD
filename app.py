@@ -62,3 +62,8 @@ st.pyplot(fig)
 
 st.success("v0.3 LIVE – Interactive Supersonic Nozzle Calculator")
 st.caption("GitHub: https://github.com/LaytonLNicol/Supersonic-Nozzle-CFD")
+
+p_exit_isentropic = p0 * (T_exit / T0)**(gamma / (gamma-1))
+st.metric("Isentropic Exit Pressure", f"{p_exit_isentropic / 1e3:.1f} kPa")
+mismatch = abs(pe - p_exit_isentropic) / p_exit_isentropic * 100
+st.caption(f"Back pressure mismatch: {mismatch:.1f}% → {'Perfectly expanded' if mismatch < 5 else 'Shocks expected in real flow'}")

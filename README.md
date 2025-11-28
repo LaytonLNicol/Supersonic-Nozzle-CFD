@@ -10,6 +10,13 @@ Open-source CFD solver for rocket nozzle design, built by Loughborough Universit
 Realistic converging-diverging geometry (R_throat = 0.1 m, A_exit/A_throat = 5.0)  
 ![v0.2 Bell Nozzle](nozzle_2d_bell.png)
 
+### v0.3.1 LIVE – Now predicts real-world shock formation
+- New: Isentropic exit pressure + back-pressure mismatch warning
+- Default case (100 kPa back pressure) → 376% mismatch → shocks expected
+- Set pₑ ≈ 21 kPa → perfectly expanded
+
+Live demo: https://nozzle-solver.streamlit.app
+
 ```bash
 py nozzle_solver.py          # v0.1
-py nozzle_geometry_2d.py     # v0.2
+py nozzle_geometry_2d.py     # v0.2s
